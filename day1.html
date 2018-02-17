@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="catImgs">
+    </div>
+<script>
+    let numList = [1, 2, 3, 4, 5];
+    let divCat = document.getElementById('catImgs');
+    for (var i = 0, max = numList.length; i < max; i++){
+        let label = document.createElement('p');
+        label.innerText = `cat${i+1}`;
+        let that = label.innerText;
+        let label2 = document.createElement('label');
+        label2.innerText = 1;
+        label.appendChild(label2);
+        let img = document.createElement('img');
+        img.style.display = "none";
+        label.addEventListener('click',function() {
+            img.src = `${that}.jpg`;
+            img.style.display = img.style.display === "block" ? "none" : "block";
+        },false);
+        img.addEventListener('click',function() {
+            label2.innerText = parseInt(label2.innerText) + 1;
+        })
+        divCat.appendChild(label);
+        divCat.appendChild(img);
+    }
+</script>
+</body>
+</html>
