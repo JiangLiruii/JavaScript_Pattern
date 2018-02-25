@@ -195,7 +195,7 @@ let validator = {
         if (!checker) {
           throw {
             name: 'validation Error',
-            message: 'no handle type exist for ' + type;
+            message: 'no handle type exist for ' + type,
           };
         }
         result_ok = checker.validate(data[i]);
@@ -212,7 +212,7 @@ let validator = {
   }
 }
 
-//facade pattern.provide an alternative interface 
+//facade method.provide an alternative interface 
 let myEvent = {
   stop: function(e) {
     e.preventDefault();
